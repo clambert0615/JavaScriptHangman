@@ -80,9 +80,27 @@ function updateGame() {
 
 function checkWin(){
     if(encryptedWord.indexOf("*") === -1){
-        document.getElementById("result").innerHTML = "You won!";
+        document.getElementById("result").innerHTML = "You won! <img src=\"images/F8H3.gif\">";
+    }
+    else if(guessesRemaining === 6){
+        document.getElementById("result").innerHTML= "<img src=\"images/step1.png\">";
+    }
+    else if(guessesRemaining === 5){
+        document.getElementById("result").innerHTML= "<img src=\"images/step2.png\">";
+    }
+    else if(guessesRemaining === 4){
+        document.getElementById("result").innerHTML= "<img src=\"images/step3.png\">";
+    }
+    else if(guessesRemaining === 3){
+        document.getElementById("result").innerHTML= "<img src=\"images/step4.png\">";
+    }
+    else if(guessesRemaining === 2){
+        document.getElementById("result").innerHTML= "<img src=\"images/step5.png\">";
+    }
+    else if(guessesRemaining === 1){
+        document.getElementById("result").innerHTML= "<img src=\"images/step6.png\">";
     }
     else if (guessesRemaining === 0){
-        document.getElementById("result").innerHTML = "You lost, better luck next time.";
+        document.getElementById("result").innerHTML = "<img src=\"images/step7.png\">";
     }
 }
