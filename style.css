@@ -1,0 +1,31 @@
+h1{
+    text-align: center;
+    font-size: 50px;
+    text-shadow: 2px 2px 5px rgb(133, 12, 12);
+   
+}
+head{
+    background-color: rgb(250, 240, 243);
+}
+
+button{
+    background-color: rgb(202, 118, 118);
+}
+input[type=button]{
+    background-color: rgb(202, 118, 118);
+}
+
+.column {
+    float: left;
+    width: 50%;
+    text-align: center;
+    border-top-style: solid;
+    border-width: medium; 
+    border-color: rgb(133, 12, 12);
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

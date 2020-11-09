@@ -1,16 +1,36 @@
-
-<h1>Hangman</h1>
+<html>
+<head>
 <script src="hangman.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>Hangman </title>
+
+</head>
+<body>
+  <h1>Hangman</h1>
+<div class="row">
+    <div class="column" >
+        <br>
 <form>
-    Guess a letter: <input type="text" name="guess" id="guess">
+    <b>Guess a letter:</b> <input type="text" name="guess" id="guess">
     <input type="hidden" id="word" name="word">
+    <input type="hidden" id="encryptedWordHidden" name="encryptedWordHidden">
     <input type="button" value="Submit" onclick="analyzeGuess()">
 </form>
-<h4>Encrypted Word</h4>
+<br>
+<h4 id=>Encrypted Word: </h4>
 <h3 id="encryptedWord"></h3>
-<h4>Guesses Remaining</h4>   
-<h3 id="guessesRemaining"></h3>
-<h4>Letters Guessed</h4>
+<h4>Letters Guessed:</h4>
 <h3 id="guesses"></h3>
-<h4>Result</h4>
-<h3 id="result"></h3>
+<h4>Guesses Remaining:</h4>   
+<h3 id="guessesRemaining"></h3>
+<button type="button" value="Submit" onclick="playAgain()">Play again</button>
+    </div>
+    <div class="column">
+        <h2>Hangman Status:</h2> 
+        <h2 id="result"></h2>
+
+</div>
+</div>
+
+</body>
+</html>

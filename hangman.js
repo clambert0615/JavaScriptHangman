@@ -25,7 +25,8 @@ window.onload = function(){
         var guessesRemaining = 7;
         
          document.getElementById("guessesRemaining").innerText = guessesRemaining;
-         document.getElementById("encryptedWord").innerHTML = encryptedWord;
+         document.getElementById("encryptedWordHidden").value = encryptedWord;
+         document.getElementById("encryptedWord").innerHTML = encryptedWord.join(" ");
          document.getElementById("word").value = word;
          
       
@@ -53,7 +54,7 @@ function analyzeGuess()
 
 function evaluateGuess(guess, word)
 {
-    encryptedWord = document.getElementById("encryptedWord").innerHTML.split(",");
+    encryptedWord = document.getElementById("encryptedWordHidden").value.split(",");
     guessesRemaining = document.getElementById("guessesRemaining").innerText;
     console.log(guess);
 
@@ -72,9 +73,11 @@ function evaluateGuess(guess, word)
 }
 
 function updateGame() {
-    document.getElementById("encryptedWord").innerHTML = encryptedWord;
-    document.getElementById("guesses").innerHTML = guesses;
+    document.getElementById("encryptedWordHidden").value = encryptedWord;
+    document.getElementById("encryptedWord").innerHTML = encryptedWord.join(" ");
+    document.getElementById("guesses").innerHTML = guesses.join(", ");
     document.getElementById("guessesRemaining").innerHTML = guessesRemaining;
+    document.getElementById("guess").value = "";
 
 }
 
@@ -101,6 +104,12 @@ function checkWin(){
         document.getElementById("result").innerHTML= "<img src=\"images/step6.png\">";
     }
     else if (guessesRemaining === 0){
-        document.getElementById("result").innerHTML = "<img src=\"images/step7.png\">";
+        document.getElementById("result").innerHTML = "Game Over! <img src=\"images/step7.png\">";
+    
     }
+  }
+  function playAgain() {
+      
+    location.reload();
+
 }
